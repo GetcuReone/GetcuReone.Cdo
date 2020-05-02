@@ -48,5 +48,89 @@
             <param name="filePath"></param>
             <param name="encoding"></param>
         </member>
+        <member name="T:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter">
+            <summary>
+            Adapter for folder '{current_directory}/AppData'
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter.AdapterName">
+            <summary>
+            Adapter name.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter">
+            <summary>
+            Adapter for <see cref="T:GetcuReone.Services.Folder.IFolder"/>. Current folder.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter.AdapterName">
+            <summary>
+            Adapter name.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase">
+            <summary>
+            Base clas for folder adapter
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.DownloadFile(System.String)">
+            <summary>
+            Download file in folder. 
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.GetFullName(System.String)">
+            <summary>
+            Get file path.
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.ContainFile(System.String)">
+            <summary>
+            Contain file.
+            </summary>
+            <param name="fileName">имя файла</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.RenameFile(System.String,System.String)">
+            <summary>
+            Rename file.
+            </summary>
+            <param name="newName"></param>
+            <param name="oldName"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.DeleteFile(System.String)">
+            <summary>
+            Delete file.
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.ExistsCurrentFolder">
+            <summary>
+            Is the current folder contained in the file system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.CreateCurrentFolder">
+            <summary>
+            Create current folder.
+            </summary>
+        </member>
     </members>
 </doc>

@@ -15,7 +15,7 @@ namespace TestCommon
     {
         protected List<CreateObjectResult> CreateObjectResults { get; private set; }
 
-        [TestMethod]
+        [TestInitialize]
         public virtual void Initialize()
         {
             CreateObjectResults = new List<CreateObjectResult>();

@@ -40,7 +40,7 @@ namespace GetcuReone.CdoTests.Adapters.File
         {
             GivenEmpty()
                 .When("Call WriteAllText.", () => GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText))
-                .Then("Check create proxy", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
@@ -51,7 +51,7 @@ namespace GetcuReone.CdoTests.Adapters.File
         {
             GivenEmpty()
                 .When("Call WriteAllText.", () => GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText, Encoding.UTF8))
-                .Then("Check create proxy", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace GetcuReone.CdoTests.Adapters.File
         {
             GivenEmpty()
                 .When("Call ReadAllText.", () => GetAdapter<FileAdapter>().ReadAllText(FilePath))
-                .Then("Check create proxy", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace GetcuReone.CdoTests.Adapters.File
         {
             GivenEmpty()
                 .When("Call ReadAllText.", () => GetAdapter<FileAdapter>().ReadAllText(FilePath, Encoding.UTF8))
-                .Then("Check create proxy", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
         }
     }
 }
