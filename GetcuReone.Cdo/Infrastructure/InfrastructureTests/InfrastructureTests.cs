@@ -39,7 +39,7 @@ namespace InfrastructureTests
                 var currenFolder = new DirectoryInfo(Environment.CurrentDirectory);
                 string nugetFolderPath = Path.Combine(
                     currenFolder.Parent.Parent.Parent.Parent.Parent.FullName,
-                    "GetcuReone.Cdi",
+                    "GetcuReone.Cdo",
                     "bin",
                     _buildConfiguration);
                 return new DirectoryInfo(nugetFolderPath);
@@ -65,8 +65,8 @@ namespace InfrastructureTests
                 {
                     var files = new string[]
                     {
-                        "lib/netstandard2.0/GetcuReone.Cdi.dll",
-                        "lib/netstandard2.0/GetcuReone.Cdi.xml",
+                        "lib/netstandard2.0/GetcuReone.Cdo.dll",
+                        "lib/netstandard2.0/GetcuReone.Cdo.xml",
                         "LICENSE.txt",
                         "README.md",
                     };
@@ -108,7 +108,7 @@ namespace InfrastructureTests
 
                     foreach (var cl in typeClasses)
                     {
-                        foreach (var method in cl.GetMethods().Where(method => method.GetCustomAttribute(typeof(TestMethodAttribute)) != null))
+                        foreach (var method in cl.GetMethods().Where(method => method.CustomAttributes.Any(attr => attr.AttributeType == typeof(TestMethodAttribute))))
                         {
                             result.Add(method);
                             LoggingHelper.ConsoleInfo($"test method {cl.FullName}.{method.Name}()");
@@ -123,7 +123,7 @@ namespace InfrastructureTests
 
                     if (invalidMethods.Count != 0)
                     {
-                        Assert.Fail("Methods dont have TestMethodAttribute:\n" + string.Join("\n", invalidMethods.Select(method => $"{method.DeclaringType.FullName}.{method.Name}")));
+                        Assert.Fail("Methods dont have TimeoutAttribute:\n" + string.Join("\n", invalidMethods.Select(method => $"{method.DeclaringType.FullName}.{method.Name}")));
                     }
                 });
         }
@@ -136,7 +136,7 @@ namespace InfrastructureTests
         public void AllNamespacesStartWithGetcuReoneTestCase()
         {
             string beginNamespace = "GetcuReone";
-            string partNameAssemblies = "GetcuReone.Cdi";
+            string partNameAssemblies = "GetcuReone.Cdo";
             string[] excludeAssemblies = new string[]
             {
             };
@@ -171,6 +171,9 @@ namespace InfrastructureTests
 
                     foreach (Type type in types)
                     {
+                        if (type.FullName.Contains("__AnonymousType"))
+                            continue;
+
                         if (type.FullName.Length <= beginNamespace.Length)
                             invalidTypes.Add(type);
                         else if (!type.FullName.Substring(0, beginNamespace.Length).Equals(beginNamespace, StringComparison.Ordinal))
@@ -198,7 +201,7 @@ namespace InfrastructureTests
                 ? $"{majorVersion}.0.0.0"
                 : "1.0.0.0";
 
-            string partNameAssemblies = "GetcuReone.Cdi";
+            string partNameAssemblies = "GetcuReone.Cdo";
 
             Given("Get all file", () => InfrastructureHelper.GetAllFiles(new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.Parent.Parent))
                 .And("Get all assemblies", files => files.Where(file => file.Name.Contains(".dll")))
