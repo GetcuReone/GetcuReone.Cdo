@@ -108,7 +108,7 @@ namespace InfrastructureTests
 
                     foreach (var cl in typeClasses)
                     {
-                        foreach (var method in cl.GetMethods().Where(method => method.GetCustomAttribute(typeof(TestMethodAttribute)) != null))
+                        foreach (var method in cl.GetMethods().Where(method => method.CustomAttributes.Any(attr => attr.AttributeType == typeof(TestMethodAttribute))))
                         {
                             result.Add(method);
                             LoggingHelper.ConsoleInfo($"test method {cl.FullName}.{method.Name}()");
@@ -123,7 +123,7 @@ namespace InfrastructureTests
 
                     if (invalidMethods.Count != 0)
                     {
-                        Assert.Fail("Methods dont have TestMethodAttribute:\n" + string.Join("\n", invalidMethods.Select(method => $"{method.DeclaringType.FullName}.{method.Name}")));
+                        Assert.Fail("Methods dont have TimeoutAttribute:\n" + string.Join("\n", invalidMethods.Select(method => $"{method.DeclaringType.FullName}.{method.Name}")));
                     }
                 });
         }
@@ -171,6 +171,9 @@ namespace InfrastructureTests
 
                     foreach (Type type in types)
                     {
+                        if (type.FullName.Contains("__AnonymousType"))
+                            continue;
+
                         if (type.FullName.Length <= beginNamespace.Length)
                             invalidTypes.Add(type);
                         else if (!type.FullName.Substring(0, beginNamespace.Length).Equals(beginNamespace, StringComparison.Ordinal))
