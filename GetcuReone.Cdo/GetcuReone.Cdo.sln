@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCommon", "Infrastructur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastructureTests", "Infrastructure\InfrastructureTests\InfrastructureTests.csproj", "{DAD88EA7-60D7-40EB-9C26-61003903F00C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetcuReone.CdoTests", "GetcuReone.CdoTests\GetcuReone.CdoTests.csproj", "{91E8F355-628B-4527-9272-608A0A06D7EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{DAD88EA7-60D7-40EB-9C26-61003903F00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAD88EA7-60D7-40EB-9C26-61003903F00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAD88EA7-60D7-40EB-9C26-61003903F00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91E8F355-628B-4527-9272-608A0A06D7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91E8F355-628B-4527-9272-608A0A06D7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91E8F355-628B-4527-9272-608A0A06D7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91E8F355-628B-4527-9272-608A0A06D7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

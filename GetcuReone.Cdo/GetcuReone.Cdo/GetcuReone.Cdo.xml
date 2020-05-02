@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GetcuReone.Cdo</name>
+    </assembly>
+    <members>
+        <member name="T:GetcuReone.Cdo.Adapters.File.FileAdapter">
+            <summary>
+            adapter for <see cref="T:GetcuReone.Services.File.IFile"/>.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdo.Adapters.File.FileAdapter.AdapterName">
+            <summary>
+            Adapter name.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="createProxyFunc"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.WriteAllText(System.String,System.String)">
+            <summary>
+            Write text in file.
+            </summary>
+            <param name="filePath"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.WriteAllText(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Write text in file.
+            </summary>
+            <param name="filePath"></param>
+            <param name="text"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.ReadAllText(System.String)">
+            <summary>
+            Read text from file.
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.ReadAllText(System.String,System.Text.Encoding)">
+            <summary>
+            Read text from file.
+            </summary>
+            <param name="filePath"></param>
+            <param name="encoding"></param>
+        </member>
+    </members>
+</doc>
