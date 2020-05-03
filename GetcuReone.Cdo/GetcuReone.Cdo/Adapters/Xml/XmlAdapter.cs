@@ -27,5 +27,19 @@ namespace GetcuReone.Cdo.Adapters.Xml
             var formatter = new XmlSerializer(typeof(TSerializeObj));
             formatter.Serialize(stream, serializeObj);
         }
+
+        /// <summary>
+        /// Deserialize obj <typeparamref name="TDeserializeObj"/> type from <paramref name="stream"/>.
+        /// </summary>
+        /// <typeparam name="TDeserializeObj"></typeparam>
+        /// <typeparam name="TStream"></typeparam>
+        /// <param name="stream"></param>
+        /// <returns></returns>
+        public TDeserializeObj Deserialize<TDeserializeObj, TStream>(TStream stream)
+            where TStream : Stream
+        {
+            var formatter = new XmlSerializer(typeof(TDeserializeObj));
+            return (TDeserializeObj)formatter.Deserialize(stream);
+        }
     }
 }

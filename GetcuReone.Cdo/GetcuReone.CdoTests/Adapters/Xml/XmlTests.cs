@@ -87,5 +87,23 @@ namespace GetcuReone.CdoTests.Adapters.Xml
 
             System.IO.File.Delete(filePath);
         }
+
+        [TestMethod]
+        [TestCategory(TC.Projects.GR_Cdo)]
+        [Description("XmlTestObj deserialize.")]
+        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        public void XmlTestObjDeserializeTestCase()
+        {
+            GivenEmpty()
+                .When("Serialize.", () =>
+                {
+                    using (var fileStream = System.IO.File.OpenRead(TestObjFilePath))
+                        return GetAdapter<XmlAdapter>().Deserialize<XmlTestObj, FileStream>(fileStream);
+                })
+                .Then("Check result.", result =>
+                {
+                    Assert.AreEqual("TestData", result.Value, "Expected another value.");
+                });
+        }
     }
 }

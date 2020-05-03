@@ -174,5 +174,14 @@
             <param name="serializeObj"></param>
             <param name="stream"></param>
         </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``2(``1)">
+            <summary>
+            Deserialize obj <typeparamref name="TDeserializeObj"/> type from <paramref name="stream"/>.
+            </summary>
+            <typeparam name="TDeserializeObj"></typeparam>
+            <typeparam name="TStream"></typeparam>
+            <param name="stream"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
