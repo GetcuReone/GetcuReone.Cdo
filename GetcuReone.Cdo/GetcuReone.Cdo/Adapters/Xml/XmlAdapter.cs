@@ -46,6 +46,17 @@ namespace GetcuReone.Cdo.Adapters.Xml
         /// </summary>
         /// <typeparam name="TSerializeObj"></typeparam>
         /// <param name="serializeObj"></param>
+        /// <returns></returns>
+        public string SerializeToString<TSerializeObj>(TSerializeObj serializeObj)
+        {
+            return SerializeToString(serializeObj, Encoding.UTF8);
+        }
+
+        /// <summary>
+        /// Serialize <paramref name="serializeObj"/> in <see cref="string"/>.
+        /// </summary>
+        /// <typeparam name="TSerializeObj"></typeparam>
+        /// <param name="serializeObj"></param>
         /// <param name="encoding"></param>
         /// <returns></returns>
         public string SerializeToString<TSerializeObj>(TSerializeObj serializeObj, Encoding encoding)
@@ -75,6 +86,39 @@ namespace GetcuReone.Cdo.Adapters.Xml
         {
             var formatter = new XmlSerializer(typeof(TDeserializeObj));
             return (TDeserializeObj)formatter.Deserialize(stream);
+        }
+
+        /// <summary>
+        /// Desirialize from string.
+        /// </summary>
+        /// <typeparam name="TDeserializeObj"></typeparam>
+        /// <param name="xml"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public TDeserializeObj Deserialize<TDeserializeObj>(string xml, Encoding encoding)
+        {
+            using(var memoryStream = new MemoryStream())
+            {
+                using(var streamWriter = new StreamWriter(memoryStream))
+                {
+                    streamWriter.WriteLine(xml);
+                    streamWriter.Flush();
+                    memoryStream.Position = 0;
+
+                    return Deserialize<TDeserializeObj, MemoryStream>(memoryStream);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Desirialize from string.
+        /// </summary>
+        /// <typeparam name="TDeserializeObj"></typeparam>
+        /// <param name="xml"></param>
+        /// <returns></returns>
+        public TDeserializeObj Deserialize<TDeserializeObj>(string xml)
+        {
+            return Deserialize<TDeserializeObj>(xml, Encoding.UTF8);
         }
     }
 }

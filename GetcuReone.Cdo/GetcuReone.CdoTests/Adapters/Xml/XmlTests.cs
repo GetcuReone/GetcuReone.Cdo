@@ -95,6 +95,8 @@ namespace GetcuReone.CdoTests.Adapters.Xml
         [Timeout(Timeouts.Milisecond.FiveHundred)]
         public void XmlTestObjDeserializeTestCase()
         {
+            string value = "TestData";
+
             GivenEmpty()
                 .When("Serialize.", () =>
                 {
@@ -103,7 +105,7 @@ namespace GetcuReone.CdoTests.Adapters.Xml
                 })
                 .Then("Check result.", result =>
                 {
-                    Assert.AreEqual("TestData", result.Value, "Expected another value.");
+                    Assert.AreEqual(value, result.Value, "Expected another value.");
                 });
         }
 
@@ -129,6 +131,22 @@ namespace GetcuReone.CdoTests.Adapters.Xml
 
                         Assert.AreEqual(testObj.Value, result.Value, "Expected another value.");
                     }
+                });
+        }
+
+        [TestMethod]
+        [TestCategory(TC.Projects.GR_Cdo)]
+        [Description("XmlTestObj deserialize from string.")]
+        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        public void DeserializeFromStringTestCase()
+        {
+            string value = "TestData";
+
+            Given("Get xml.", () => System.IO.File.ReadAllText(TestObjFilePath))
+                .When("Deserialize", xml => GetAdapter<XmlAdapter>().Deserialize<XmlTestObj>(xml))
+                .Then("Check result.", result =>
+                {
+                    Assert.AreEqual(value, result.Value, "Expected another value.");
                 });
         }
     }

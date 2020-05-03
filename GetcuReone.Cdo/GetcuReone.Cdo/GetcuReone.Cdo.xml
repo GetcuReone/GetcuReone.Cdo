@@ -182,6 +182,14 @@
             <param name="serializeObj"></param>
             <param name="writer"></param>
         </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.SerializeToString``1(``0)">
+            <summary>
+            Serialize <paramref name="serializeObj"/> in <see cref="T:System.String"/>.
+            </summary>
+            <typeparam name="TSerializeObj"></typeparam>
+            <param name="serializeObj"></param>
+            <returns></returns>
+        </member>
         <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.SerializeToString``1(``0,System.Text.Encoding)">
             <summary>
             Serialize <paramref name="serializeObj"/> in <see cref="T:System.String"/>.
@@ -198,6 +206,23 @@
             <typeparam name="TDeserializeObj"></typeparam>
             <typeparam name="TStream"></typeparam>
             <param name="stream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``1(System.String,System.Text.Encoding)">
+            <summary>
+            Desirialize from string.
+            </summary>
+            <typeparam name="TDeserializeObj"></typeparam>
+            <param name="xml"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``1(System.String)">
+            <summary>
+            Desirialize from string.
+            </summary>
+            <typeparam name="TDeserializeObj"></typeparam>
+            <param name="xml"></param>
             <returns></returns>
         </member>
     </members>
