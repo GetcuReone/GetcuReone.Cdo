@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Xml.Serialization;
 using TestCommon;
 
@@ -103,6 +104,31 @@ namespace GetcuReone.CdoTests.Adapters.Xml
                 .Then("Check result.", result =>
                 {
                     Assert.AreEqual("TestData", result.Value, "Expected another value.");
+                });
+        }
+
+        [TestMethod]
+        [TestCategory(TC.Projects.GR_Cdo)]
+        [Description("XmlTestObj serialize to string.")]
+        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        public void SerializeToStringTestCase()
+        {
+            var testObj = new XmlTestObj
+            {
+                Value = "TestData",
+            };
+
+            GivenEmpty()
+                .When("Serialize.", () => GetAdapter<XmlAdapter>().SerializeToString(testObj, Encoding.UTF8))
+                .Then("Check result.", xml => 
+                {
+                    using(var stream = new StringReader(xml))
+                    {
+                        var formatter = new XmlSerializer(typeof(XmlTestObj));
+                        var result = (XmlTestObj)formatter.Deserialize(stream);
+
+                        Assert.AreEqual(testObj.Value, result.Value, "Expected another value.");
+                    }
                 });
         }
     }

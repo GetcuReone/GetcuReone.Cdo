@@ -1,5 +1,6 @@
 ﻿using GetcuReone.Cdi;
 using System.IO;
+using System.Text;
 using System.Xml.Serialization;
 
 namespace GetcuReone.Cdo.Adapters.Xml
@@ -26,6 +27,40 @@ namespace GetcuReone.Cdo.Adapters.Xml
         {
             var formatter = new XmlSerializer(typeof(TSerializeObj));
             formatter.Serialize(stream, serializeObj);
+        }
+
+        /// <summary>
+        /// Serialize <paramref name="serializeObj"/> in <paramref name="writer"/>.
+        /// </summary>
+        /// <typeparam name="TSerializeObj"></typeparam>
+        /// <param name="serializeObj"></param>
+        /// <param name="writer"></param>
+        public void Serialize<TSerializeObj>(TSerializeObj serializeObj, TextWriter writer)
+        {
+            var formatter = new XmlSerializer(typeof(TSerializeObj));
+            formatter.Serialize(writer, serializeObj);
+        }
+
+        /// <summary>
+        /// Serialize <paramref name="serializeObj"/> in <see cref="string"/>.
+        /// </summary>
+        /// <typeparam name="TSerializeObj"></typeparam>
+        /// <param name="serializeObj"></param>
+        /// <param name="encoding"></param>
+        /// <returns></returns>
+        public string SerializeToString<TSerializeObj>(TSerializeObj serializeObj, Encoding encoding)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                using(var streamWriter = new StreamWriter(memoryStream, encoding))
+                {
+                    Serialize(serializeObj, streamWriter);
+                    memoryStream.Position = 0;
+
+                    using (var streamReader = new StreamReader(memoryStream, encoding))
+                        return streamReader.ReadToEnd();
+                }
+            }
         }
 
         /// <summary>
