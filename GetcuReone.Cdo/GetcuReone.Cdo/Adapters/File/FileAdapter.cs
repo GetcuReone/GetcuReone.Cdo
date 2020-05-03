@@ -1,5 +1,6 @@
 ﻿using GetcuReone.Cdi;
 using GetcuReone.Services.File;
+using System.IO;
 using System.Reflection;
 using System.Text;
 
@@ -91,6 +92,56 @@ namespace GetcuReone.Cdo.Adapters.File
 
             return ReturnLogging(
                 returnedObj: CreateProxy(filePath).ReadAllText(encoding));
+        }
+
+        /// <summary>
+        /// Open read.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public FileStream OpenRead(string filePath)
+        {
+            CallMethodLogging(new
+            {
+                filePath = filePath,
+            });
+
+            return ReturnNotLogging(
+                CreateProxy(filePath).OpenRead());
+        }
+
+        /// <summary>
+        /// Open.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <param name="mode"></param>
+        /// <returns></returns>
+        public FileStream Open(string filePath, FileMode mode)
+        {
+            CallMethodLogging(new
+            {
+                filePath = filePath,
+                mode = mode,
+            });
+
+            return ReturnNotLogging(
+                CreateProxy(filePath).Open(mode));
+        }
+
+        /// <summary>
+        /// Open write.
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public FileStream OpenWrite(string filePath)
+        {
+            CallMethodLogging(new
+            {
+                filePath = filePath,
+            });
+
+            return ReturnNotLogging(
+                CreateProxy(filePath).OpenWrite());
         }
     }
 }
