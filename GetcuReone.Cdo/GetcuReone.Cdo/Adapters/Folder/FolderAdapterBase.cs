@@ -1,5 +1,7 @@
 ﻿using GetcuReone.Cdi;
 using GetcuReone.Services.Folder;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GetcuReone.Cdo.Adapters.Folder
 {
@@ -103,6 +105,30 @@ namespace GetcuReone.Cdo.Adapters.Folder
             CreateProxy(_folderPath).CreateFolder();
 
             ReturnLogging();
+        }
+
+        /// <summary>
+        /// Get files.
+        /// </summary>
+        /// <returns></returns>
+        public virtual List<string> GetFiles()
+        {
+            CallMethodLogging();
+
+            return ReturnLogging(
+                CreateProxy(_folderPath).GetFiles().Select(file => file.FullName).ToList());
+        }
+
+        /// <summary>
+        /// Get files.
+        /// </summary>
+        /// <returns></returns>
+        public virtual List<string> GetFiles(string searchPattern)
+        {
+            CallMethodLogging();
+
+            return ReturnLogging(
+                CreateProxy(_folderPath).GetFiles(searchPattern).Select(file => file.FullName).ToList());
         }
     }
 }
