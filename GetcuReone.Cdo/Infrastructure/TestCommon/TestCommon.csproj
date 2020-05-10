@@ -13,7 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GetcuReone.GwtTestFramework" Version="[1.0.0,)" />
-    <PackageReference Include="ComboPatterns" Version="[3.1.0,)" />
+    <PackageReference Include="GetcuReone.Cdi.TestCommon" Version="[1.*,)" />
   </ItemGroup>
 </Project>

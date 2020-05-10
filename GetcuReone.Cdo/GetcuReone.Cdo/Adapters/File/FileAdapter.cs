@@ -19,7 +19,6 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="createProxyFunc"></param>
         public FileAdapter() : base(filePath => new FileService(filePath))
         {
         }
