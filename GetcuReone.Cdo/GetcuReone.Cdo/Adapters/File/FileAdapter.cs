@@ -1,7 +1,6 @@
 ﻿using GetcuReone.Cdi;
 using GetcuReone.Services.File;
 using System.IO;
-using System.Reflection;
 using System.Text;
 
 namespace GetcuReone.Cdo.Adapters.File
