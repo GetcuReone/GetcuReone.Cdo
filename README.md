@@ -1,7 +1,9 @@
-# GetcuReone.Cdi
+# GetcuReone.Cdo
 
 Common domain operations.
 
-[Link][nuget_source] to a resource with NuGet packages.
+[![NuGet version (GetcuReone.Cdo)](https://img.shields.io/nuget/v/GetcuReone.Cdo.svg?style=flat-square)](https://www.nuget.org/packages/GetcuReone.Cdo/)
+[![Build status](https://dev.azure.com/GetcuReone-Studio/OpenSource-Projects/_apis/build/status/master-GetcuReone.Cdo?branchName=master)](https://dev.azure.com/GetcuReone-Studio/OpenSource-Projects/_build/latest?definitionId=36)
 
-[nuget_source]: https://pkgs.dev.azure.com/GetcuReone/_packaging/b15013dc-d009-7e3e-ac41-e7686be8155f/nuget/v3/index.json "GetcuReone_NuGet"
+- [NuGet Package](https://www.nuget.org/packages/GetcuReone.Cdo/)
+- [License](LICENSE.txt)
