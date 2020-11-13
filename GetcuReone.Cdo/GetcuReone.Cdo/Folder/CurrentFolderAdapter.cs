@@ -1,7 +1,6 @@
-﻿using GetcuReone.Cdo.Folder;
-using System;
+﻿using System;
 
-namespace GetcuReone.Cdo.Adapters.Folder
+namespace GetcuReone.Cdo.Folder
 {
     /// <summary>
     /// Adapter for <see cref="IFolder"/>. Current folder.

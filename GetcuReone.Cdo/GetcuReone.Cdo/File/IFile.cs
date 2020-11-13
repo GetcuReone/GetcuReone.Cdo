@@ -52,5 +52,7 @@ namespace GetcuReone.Cdo.File
         /// </summary>
         /// <returns></returns>
         FileStream OpenWrite();
+
+        void MoveTo()
     }
 }
