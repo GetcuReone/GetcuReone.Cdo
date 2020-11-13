@@ -53,4 +53,8 @@
         <PackageReference Include="GetcuReone.Cdi" Version="[1.0.0,)" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="File\" />
+    </ItemGroup>
+
 </Project>
