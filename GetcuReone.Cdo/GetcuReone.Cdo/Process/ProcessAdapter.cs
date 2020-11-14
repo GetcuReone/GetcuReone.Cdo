@@ -1,7 +1,6 @@
 ﻿using GetcuReone.Cdi;
-using GetcuReone.Services.Process;
 
-namespace GetcuReone.Cdo.Adapters.Process
+namespace GetcuReone.Cdo.Process
 {
     /// <summary>
     /// Adapter for <see cref="IProcess"/>.
@@ -28,10 +27,7 @@ namespace GetcuReone.Cdo.Adapters.Process
         /// <returns></returns>
         public System.Diagnostics.Process Start(string process, string args)
         {
-            CallMethodLogging(new { process, args });
-
-            return ReturnNotLogging(
-                CreateProxy().Start(process, args));
+            return CreateProxy().Start(process, args);
         }
     }
 }
