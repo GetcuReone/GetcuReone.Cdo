@@ -1,45 +1,34 @@
 ﻿using GetcuReone.Cdi;
-using GetcuReone.Cdo.Adapters.Folder;
-using GetcuReone.Cdo.Adapters.Process;
+using GetcuReone.Cdo.File;
+using GetcuReone.Cdo.Folder;
+using GetcuReone.Cdo.Process;
 using System;
 using System.IO;
 using System.Net.Mail;
 using System.Reflection;
 using System.Text;
-using EmailRequest = GetcuReone.Cdm.Communication.Email;
 
-namespace GetcuReone.Cdo.Facades.Email
+namespace GetcuReone.Cdo.Email
 {
     /// <summary>
-    /// Facade for work email.
+    /// Service for email.
     /// </summary>
-    public sealed class EmailFacade : GrFacadeBase
+    public class EmailService : GrFactoryBase, IEmail
     {
-        /// <summary>
-        /// Facade name.
-        /// </summary>
-        protected override string FacadeName => nameof(EmailFacade);
+        /// <inheritdoc/>
+        protected override string FactoryName => nameof(EmailService);
 
-        /// <summary>
-        /// Open email in default email program.
-        /// </summary>
-        /// <param name="email"></param>
-        public void OpenEmail(EmailRequest email)
+        /// <inheritdoc/>
+        public void OpenEmail(Cdm.Communication.Email email)
         {
             OpenEmail(
                 email,
                 GetAdapter<CurrentFolderAdapter>().GetFullName("temp.eml"));
         }
 
-        /// <summary>
-        /// Open email in default email program.
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="fileEmail"></param>
-        public void OpenEmail(EmailRequest email, string fileEmail)
+        /// <inheritdoc/>
+        public void OpenEmail(Cdm.Communication.Email email, string fileEmail)
         {
-            CallMethodLogging(email);
-
             var mailMessage = new MailMessage();
 
             foreach (var recipient in email.To)
@@ -54,7 +43,7 @@ namespace GetcuReone.Cdo.Facades.Email
 
             mailMessage.IsBodyHtml = email.IsBodyHtml;
 
-            using (FileStream fileStream = File.Create(fileEmail))
+            using (FileStream fileStream = GetAdapter<FileAdapter>().Open(fileEmail, FileMode.Create))
             {
                 using (var binaryWriter = new BinaryWriter(fileStream))
                 {
@@ -84,8 +73,6 @@ namespace GetcuReone.Cdo.Facades.Email
             }
 
             GetAdapter<ProcessAdapter>().Start(fileEmail, string.Empty);
-
-            ReturnLogging();
         }
     }
 }

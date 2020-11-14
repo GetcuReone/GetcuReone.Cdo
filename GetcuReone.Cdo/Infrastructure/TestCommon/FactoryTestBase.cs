@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using GetcuReone.GetcuTestAdapter;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using TestCommon.Entities;
 namespace TestCommon
 {
     [TestClass]
-    public abstract class FactoryTestBase : GetcuReone.Cdi.TestCommon.FactoryTestBase
+    public abstract class FactoryTestBase : GetcuReoneTestBase
     {
         protected List<CreateObjectResult> CreateObjectResults { get; private set; }
 

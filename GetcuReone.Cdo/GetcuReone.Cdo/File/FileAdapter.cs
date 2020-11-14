@@ -1,9 +1,8 @@
 ﻿using GetcuReone.Cdi;
-using GetcuReone.Services.File;
 using System.IO;
 using System.Text;
 
-namespace GetcuReone.Cdo.Adapters.File
+namespace GetcuReone.Cdo.File
 {
     /// <summary>
     /// adapter for <see cref="IFile"/>.
@@ -18,7 +17,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <summary>
         /// Constructor.
         /// </summary>
-        public FileAdapter() : base(filePath => new FileService(filePath))
+        public FileAdapter(): base(filePath => new FileService(filePath))
         {
         }
 
@@ -29,15 +28,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <param name="text"></param>
         public void WriteAllText(string filePath, string text)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-                text = text,
-            });
-
             CreateProxy(filePath).WriteAllText(text);
-
-            ReturnLogging();
         }
 
         /// <summary>
@@ -48,16 +39,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <param name="encoding"></param>
         public void WriteAllText(string filePath, string text, Encoding encoding)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-                text = text,
-                encoding = encoding,
-            });
-
             CreateProxy(filePath).WriteAllText(text, encoding);
-
-            ReturnLogging();
         }
 
         /// <summary>
@@ -66,13 +48,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <param name="filePath"></param>
         public string ReadAllText(string filePath)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-            });
-
-            return ReturnLogging(
-                returnedObj: CreateProxy(filePath).ReadAllText());
+            return CreateProxy(filePath).ReadAllText();
         }
 
         /// <summary>
@@ -82,14 +58,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <param name="encoding"></param>
         public string ReadAllText(string filePath, Encoding encoding)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-                encoding = encoding,
-            });
-
-            return ReturnLogging(
-                returnedObj: CreateProxy(filePath).ReadAllText(encoding));
+            return CreateProxy(filePath).ReadAllText(encoding);
         }
 
         /// <summary>
@@ -99,13 +68,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <returns></returns>
         public FileStream OpenRead(string filePath)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-            });
-
-            return ReturnNotLogging(
-                CreateProxy(filePath).OpenRead());
+            return CreateProxy(filePath).OpenRead();
         }
 
         /// <summary>
@@ -116,14 +79,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <returns></returns>
         public FileStream Open(string filePath, FileMode mode)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-                mode = mode,
-            });
-
-            return ReturnNotLogging(
-                CreateProxy(filePath).Open(mode));
+            return CreateProxy(filePath).Open(mode);
         }
 
         /// <summary>
@@ -133,13 +89,7 @@ namespace GetcuReone.Cdo.Adapters.File
         /// <returns></returns>
         public FileStream OpenWrite(string filePath)
         {
-            CallMethodLogging(new
-            {
-                filePath = filePath,
-            });
-
-            return ReturnNotLogging(
-                CreateProxy(filePath).OpenWrite());
+            return CreateProxy(filePath).OpenWrite();
         }
     }
 }
