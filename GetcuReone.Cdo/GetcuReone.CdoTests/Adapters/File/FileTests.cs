@@ -1,5 +1,5 @@
-﻿using GetcuReone.Cdo.Adapters.File;
-using GetcuReone.Services.File;
+﻿using GetcuReone.Cdo.File;
+using GetcuReone.GetcuTestAdapter;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.IO;
@@ -33,47 +33,55 @@ namespace GetcuReone.CdoTests.Adapters.File
         }
 
         [TestMethod]
-        [TestCategory(TC.Projects.GR_Cdo)]
+        [TestCategory(GetcuReoneTC.Unit)]
         [Description("Call WriteAllText method.")]
-        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void WriteAllTextTestCase()
         {
             GivenEmpty()
-                .When("Call WriteAllText.", () => GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText))
-                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .When("Call WriteAllText.", () => 
+                    GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText))
+                .Then("Check create proxy.", () => 
+                    AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
-        [TestCategory(TC.Projects.GR_Cdo)]
+        [TestCategory(GetcuReoneTC.Unit)]
         [Description("Call WriteAllText method.")]
-        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void WriteAllText_Utf8_TestCase()
         {
             GivenEmpty()
-                .When("Call WriteAllText.", () => GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText, Encoding.UTF8))
-                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .When("Call WriteAllText.", () => 
+                    GetAdapter<FileAdapter>().WriteAllText(FilePath, DefaultText, Encoding.UTF8))
+                .Then("Check create proxy.", () => 
+                    AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
-        [TestCategory(TC.Projects.GR_Cdo)]
+        [TestCategory(GetcuReoneTC.Unit)]
         [Description("Call ReadAllText method.")]
-        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ReadAllTextTestCase()
         {
             GivenEmpty()
-                .When("Call ReadAllText.", () => GetAdapter<FileAdapter>().ReadAllText(FilePath))
-                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .When("Call ReadAllText.", () => 
+                    GetAdapter<FileAdapter>().ReadAllText(FilePath))
+                .Then("Check create proxy.", () => 
+                    AssertCreateObjectResult<IFile, string>(FilePath));
         }
 
         [TestMethod]
-        [TestCategory(TC.Projects.GR_Cdo)]
+        [TestCategory(GetcuReoneTC.Unit)]
         [Description("Call WriteAllText method.")]
-        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void ReadAllText_Utf8_TestCase()
         {
             GivenEmpty()
-                .When("Call ReadAllText.", () => GetAdapter<FileAdapter>().ReadAllText(FilePath, Encoding.UTF8))
-                .Then("Check create proxy.", () => AssertCreateObjectResult<IFile, string>(FilePath));
+                .When("Call ReadAllText.", () => 
+                    GetAdapter<FileAdapter>().ReadAllText(FilePath, Encoding.UTF8))
+                .Then("Check create proxy.", () => 
+                    AssertCreateObjectResult<IFile, string>(FilePath));
         }
     }
 }
