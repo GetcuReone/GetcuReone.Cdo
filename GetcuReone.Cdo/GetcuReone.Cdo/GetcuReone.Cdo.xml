@@ -4,30 +4,61 @@
         <name>GetcuReone.Cdo</name>
     </assembly>
     <members>
-        <member name="T:GetcuReone.Cdo.Adapters.File.FileAdapter">
+        <member name="T:GetcuReone.Cdo.Email.EmailService">
             <summary>
-            adapter for <see cref="T:GetcuReone.Services.File.IFile"/>.
+            Service for email.
             </summary>
         </member>
-        <member name="P:GetcuReone.Cdo.Adapters.File.FileAdapter.AdapterName">
+        <member name="P:GetcuReone.Cdo.Email.EmailService.FactoryName">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Email.EmailService.OpenEmail(GetcuReone.Cdm.Communication.Email)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Email.EmailService.OpenEmail(GetcuReone.Cdm.Communication.Email,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GetcuReone.Cdo.Email.IEmail">
+            <summary>
+            Service for email.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Email.IEmail.OpenEmail(GetcuReone.Cdm.Communication.Email)">
+            <summary>
+            Open email in default email program.
+            </summary>
+            <param name="email"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Email.IEmail.OpenEmail(GetcuReone.Cdm.Communication.Email,System.String)">
+            <summary>
+            Open email in default email program.
+            </summary>
+            <param name="email"></param>
+            <param name="fileEmail"></param>
+        </member>
+        <member name="T:GetcuReone.Cdo.File.FileAdapter">
+            <summary>
+            adapter for <see cref="T:GetcuReone.Cdo.File.IFile"/>.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdo.File.FileAdapter.AdapterName">
             <summary>
             Adapter name.
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.#ctor">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.#ctor">
             <summary>
             Constructor.
             </summary>
-            <param name="createProxyFunc"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.WriteAllText(System.String,System.String)">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.WriteAllText(System.String,System.String)">
             <summary>
             Write text in file.
             </summary>
             <param name="filePath"></param>
             <param name="text"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.WriteAllText(System.String,System.String,System.Text.Encoding)">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.WriteAllText(System.String,System.String,System.Text.Encoding)">
             <summary>
             Write text in file.
             </summary>
@@ -35,137 +66,312 @@
             <param name="text"></param>
             <param name="encoding"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.ReadAllText(System.String)">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.ReadAllText(System.String)">
             <summary>
             Read text from file.
             </summary>
             <param name="filePath"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.File.FileAdapter.ReadAllText(System.String,System.Text.Encoding)">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.ReadAllText(System.String,System.Text.Encoding)">
             <summary>
             Read text from file.
             </summary>
             <param name="filePath"></param>
             <param name="encoding"></param>
         </member>
-        <member name="T:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter">
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.OpenRead(System.String)">
+            <summary>
+            Open read.
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.Open(System.String,System.IO.FileMode)">
+            <summary>
+            Open.
+            </summary>
+            <param name="filePath"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileAdapter.OpenWrite(System.String)">
+            <summary>
+            Open write.
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdo.File.FileService">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.#ctor(System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="filePath"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.ReadAllText">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.ReadAllText(System.Text.Encoding)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.WriteAllText(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.WriteAllText(System.String,System.Text.Encoding)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.OpenRead">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.Open(System.IO.FileMode)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.FileService.OpenWrite">
+            <inheritdoc/>
+        </member>
+        <member name="T:GetcuReone.Cdo.File.IFile">
+            <summary>
+            For work with <see cref="N:GetcuReone.Cdo.File"/>
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.ReadAllText">
+            <summary>
+            Read all text.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.ReadAllText(System.Text.Encoding)">
+            <summary>
+            Read all text.
+            </summary>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.WriteAllText(System.String)">
+            <summary>
+            Write all text.
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.WriteAllText(System.String,System.Text.Encoding)">
+            <summary>
+            Write all text.
+            </summary>
+            <param name="text"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.OpenRead">
+            <summary>
+            Open read.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.Open(System.IO.FileMode)">
+            <summary>
+            Open.
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.File.IFile.OpenWrite">
+            <summary>
+            Open write.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdo.Folder.AppDataFolderAdapter">
             <summary>
             Adapter for folder '{current_directory}/AppData'
             </summary>
         </member>
-        <member name="P:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter.AdapterName">
+        <member name="P:GetcuReone.Cdo.Folder.AppDataFolderAdapter.AdapterName">
             <summary>
             Adapter name.
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.AppDataFolderAdapter.#ctor">
+        <member name="M:GetcuReone.Cdo.Folder.AppDataFolderAdapter.#ctor">
             <summary>
             Constructor.
             </summary>
         </member>
-        <member name="T:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter">
+        <member name="T:GetcuReone.Cdo.Folder.CurrentFolderAdapter">
             <summary>
-            Adapter for <see cref="T:GetcuReone.Services.Folder.IFolder"/>. Current folder.
+            Adapter for <see cref="T:GetcuReone.Cdo.Folder.IFolder"/>. Current folder.
             </summary>
         </member>
-        <member name="P:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter.AdapterName">
+        <member name="P:GetcuReone.Cdo.Folder.CurrentFolderAdapter.AdapterName">
             <summary>
             Adapter name.
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.CurrentFolderAdapter.#ctor">
+        <member name="M:GetcuReone.Cdo.Folder.CurrentFolderAdapter.#ctor">
             <summary>
             Constructor.
             </summary>
         </member>
-        <member name="T:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase">
+        <member name="T:GetcuReone.Cdo.Folder.FolderAdapterBase">
             <summary>
             Base clas for folder adapter
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.#ctor(System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.#ctor(System.String)">
             <summary>
             Constructor.
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.DownloadFile(System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.DownloadFile(System.String)">
             <summary>
             Download file in folder. 
             </summary>
             <param name="filePath"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.GetFullName(System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.GetFullName(System.String)">
             <summary>
             Get file path.
             </summary>
             <param name="fileName"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.ContainFile(System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.ContainFile(System.String)">
             <summary>
             Contain file.
             </summary>
             <param name="fileName">имя файла</param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.RenameFile(System.String,System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.RenameFile(System.String,System.String)">
             <summary>
             Rename file.
             </summary>
             <param name="newName"></param>
             <param name="oldName"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.DeleteFile(System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.DeleteFile(System.String)">
             <summary>
             Delete file.
             </summary>
             <param name="fileName"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.ExistsCurrentFolder">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.ExistsCurrentFolder">
             <summary>
             Is the current folder contained in the file system.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Folder.FolderAdapterBase.CreateCurrentFolder">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.CreateCurrentFolder">
             <summary>
             Create current folder.
             </summary>
         </member>
-        <member name="T:GetcuReone.Cdo.Adapters.Process.ProcessAdapter">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.GetFiles">
             <summary>
-            Adapter for <see cref="T:GetcuReone.Services.Process.IProcess"/>.
+            Get files.
             </summary>
+            <returns></returns>
         </member>
-        <member name="P:GetcuReone.Cdo.Adapters.Process.ProcessAdapter.AdapterName">
+        <member name="M:GetcuReone.Cdo.Folder.FolderAdapterBase.GetFiles(System.String)">
             <summary>
-            Adapter name.
+            Get files.
             </summary>
+            <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Process.ProcessAdapter.#ctor">
+        <member name="T:GetcuReone.Cdo.Folder.FolderService">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.#ctor(System.String)">
             <summary>
             Constructor.
             </summary>
+            <param name="folderPath"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Process.ProcessAdapter.Start(System.String,System.String)">
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.CreateFolder">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.DeleteFile(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.DownloadFile(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.ExistsCurrentFolder">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.GetFileInfo(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.MoveTo(System.String,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.GetFiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.FolderService.GetFiles(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GetcuReone.Cdo.Folder.IFolder">
             <summary>
-            Start process.
+            A service for working with folders in the file system.
             </summary>
-            <param name="process"></param>
-            <param name="args"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.GetFileInfo(System.String)">
+            <summary>
+            Return file info.
+            </summary>
+            <param name="fileName">Relative file name.</param>
             <returns></returns>
         </member>
-        <member name="T:GetcuReone.Cdo.Adapters.Xml.XmlAdapter">
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.CreateFolder">
             <summary>
-            Adapter for xml.
+            Create current folder.
             </summary>
         </member>
-        <member name="P:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.AdapterName">
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.ExistsCurrentFolder">
             <summary>
-            Adapter name.
+            Is the current folder contained in the file system.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.MoveTo(System.String,System.String)">
+            <summary>
+            Move file.
+            </summary>
+            <param name="newFilePath"></param>
+            <param name="oldName"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.DeleteFile(System.String)">
+            <summary>
+            Delete file.
+            </summary>
+            <param name="fileName">имя файла</param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.DownloadFile(System.String)">
+            <summary>
+            Download file in folder.
+            </summary>
+            <param name="filePath">путь к файлу</param>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.GetFiles">
+            <summary>
+            Get files.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GetcuReone.Cdo.Folder.IFolder.GetFiles(System.String)">
+            <summary>
+            Get files.
+            </summary>
+            <param name="searchPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdo.Helpers.XmlHelper">
+            <summary>
+            Helper for xml operation.
             </summary>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Serialize``2(``0,``1)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.SerializeToStream``2(``0,``1)">
             <summary>
             Serialize <paramref name="serializeObj"/> in <paramref name="stream"/>.
             </summary>
@@ -174,7 +380,7 @@
             <param name="serializeObj"></param>
             <param name="stream"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Serialize``1(``0,System.IO.TextWriter)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.SerializeToTextWriter``1(``0,System.IO.TextWriter)">
             <summary>
             Serialize <paramref name="serializeObj"/> in <paramref name="writer"/>.
             </summary>
@@ -182,7 +388,7 @@
             <param name="serializeObj"></param>
             <param name="writer"></param>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.SerializeToString``1(``0)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.Serialize``1(``0)">
             <summary>
             Serialize <paramref name="serializeObj"/> in <see cref="T:System.String"/>.
             </summary>
@@ -190,7 +396,7 @@
             <param name="serializeObj"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.SerializeToString``1(``0,System.Text.Encoding)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.Serialize``1(``0,System.Text.Encoding)">
             <summary>
             Serialize <paramref name="serializeObj"/> in <see cref="T:System.String"/>.
             </summary>
@@ -199,16 +405,15 @@
             <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``2(``1)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.DeserializeFromXml``1(System.IO.Stream)">
             <summary>
             Deserialize obj <typeparamref name="TDeserializeObj"/> type from <paramref name="stream"/>.
             </summary>
             <typeparam name="TDeserializeObj"></typeparam>
-            <typeparam name="TStream"></typeparam>
             <param name="stream"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``1(System.String,System.Text.Encoding)">
+        <member name="M:GetcuReone.Cdo.Helpers.XmlHelper.DeserializeFromXml``1(System.String,System.Text.Encoding)">
             <summary>
             Desirialize from string.
             </summary>
@@ -217,13 +422,49 @@
             <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:GetcuReone.Cdo.Adapters.Xml.XmlAdapter.Deserialize``1(System.String)">
+        <member name="T:GetcuReone.Cdo.Process.IProcess">
             <summary>
-            Desirialize from string.
+            Service for process.
             </summary>
-            <typeparam name="TDeserializeObj"></typeparam>
-            <param name="xml"></param>
+        </member>
+        <member name="M:GetcuReone.Cdo.Process.IProcess.Start(System.String,System.String)">
+            <summary>
+            Start process.
+            </summary>
+            <param name="processName"></param>
+            <param name="args"></param>
             <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdo.Process.ProcessAdapter">
+            <summary>
+            Adapter for <see cref="T:GetcuReone.Cdo.Process.IProcess"/>.
+            </summary>
+        </member>
+        <member name="P:GetcuReone.Cdo.Process.ProcessAdapter.AdapterName">
+            <summary>
+            Adapter name.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Process.ProcessAdapter.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Process.ProcessAdapter.Start(System.String,System.String)">
+            <summary>
+            Start process.
+            </summary>
+            <param name="process"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GetcuReone.Cdo.Process.ProcessService">
+            <summary>
+            Service for process.
+            </summary>
+        </member>
+        <member name="M:GetcuReone.Cdo.Process.ProcessService.Start(System.String,System.String)">
+            <inheritdoc/>
         </member>
     </members>
 </doc>

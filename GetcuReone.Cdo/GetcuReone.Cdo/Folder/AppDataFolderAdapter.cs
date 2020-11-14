@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace GetcuReone.Cdo.Adapters.Folder
+namespace GetcuReone.Cdo.Folder
 {
     /// <summary>
     /// Adapter for folder '{current_directory}/AppData'

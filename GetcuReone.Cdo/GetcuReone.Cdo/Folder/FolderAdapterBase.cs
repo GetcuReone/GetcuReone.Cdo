@@ -1,9 +1,8 @@
 ﻿using GetcuReone.Cdi;
-using GetcuReone.Services.Folder;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GetcuReone.Cdo.Adapters.Folder
+namespace GetcuReone.Cdo.Folder
 {
     /// <summary>
     /// Base clas for folder adapter
@@ -16,7 +15,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// Constructor.
         /// </summary>
         protected FolderAdapterBase(string folderPath)
-            :base(path => new FolderService(path))
+            : base(path => new FolderService(path))
         {
             _folderPath = folderPath;
         }
@@ -27,9 +26,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <param name="filePath"></param>
         public virtual void DownloadFile(string filePath)
         {
-            CallMethodLogging(parameter: filePath);
             CreateProxy(_folderPath).DownloadFile(filePath);
-            ReturnLogging();
         }
 
         /// <summary>
@@ -39,11 +36,8 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <returns></returns>
         public virtual string GetFullName(string fileName)
         {
-            CallMethodLogging(parameter: fileName);
 
-            string result = CreateProxy(_folderPath).GetFileInfo(fileName).FullName;
-
-            return ReturnLogging(returnedObj: result);
+            return CreateProxy(_folderPath).GetFileInfo(fileName).FullName;
         }
 
         /// <summary>
@@ -53,11 +47,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <returns></returns>
         public virtual bool ContainFile(string fileName)
         {
-            CallMethodLogging(parameter: fileName);
-
-            bool result = CreateProxy(_folderPath).GetFileInfo(fileName).Exists;
-
-            return ReturnLogging(result);
+            return CreateProxy(_folderPath).GetFileInfo(fileName).Exists;
         }
 
         /// <summary>
@@ -67,9 +57,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <param name="oldName"></param>
         public virtual void RenameFile(string newName, string oldName)
         {
-            CallMethodLogging(new { newName, oldName });
             CreateProxy(_folderPath).MoveTo(newName, oldName);
-            ReturnLogging();
         }
 
         /// <summary>
@@ -78,9 +66,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <param name="fileName"></param>
         public virtual void DeleteFile(string fileName)
         {
-            CallMethodLogging(parameter: fileName);
             CreateProxy(_folderPath).DeleteFile(fileName);
-            ReturnLogging();
         }
 
         /// <summary>
@@ -89,10 +75,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <returns></returns>
         public virtual bool ExistsCurrentFolder()
         {
-            CallMethodLogging();
-
-            return ReturnLogging(
-                CreateProxy(_folderPath).ExistsCurrentFolder());
+            return CreateProxy(_folderPath).ExistsCurrentFolder();
         }
 
         /// <summary>
@@ -100,11 +83,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// </summary>
         public virtual void CreateCurrentFolder()
         {
-            CallMethodLogging();
-
             CreateProxy(_folderPath).CreateFolder();
-
-            ReturnLogging();
         }
 
         /// <summary>
@@ -113,10 +92,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <returns></returns>
         public virtual List<string> GetFiles()
         {
-            CallMethodLogging();
-
-            return ReturnLogging(
-                CreateProxy(_folderPath).GetFiles().Select(file => file.FullName).ToList());
+            return CreateProxy(_folderPath).GetFiles().Select(file => file.FullName).ToList();
         }
 
         /// <summary>
@@ -125,10 +101,7 @@ namespace GetcuReone.Cdo.Adapters.Folder
         /// <returns></returns>
         public virtual List<string> GetFiles(string searchPattern)
         {
-            CallMethodLogging();
-
-            return ReturnLogging(
-                CreateProxy(_folderPath).GetFiles(searchPattern).Select(file => file.FullName).ToList());
+            return CreateProxy(_folderPath).GetFiles(searchPattern).Select(file => file.FullName).ToList();
         }
     }
 }

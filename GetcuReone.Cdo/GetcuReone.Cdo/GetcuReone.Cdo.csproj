@@ -1,56 +1,56 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>GetcuReone.Cdo</RootNamespace>
-    <DocumentationFile>GetcuReone.Cdo.xml</DocumentationFile>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>GetcuReone.Cdo</RootNamespace>
+        <DocumentationFile>GetcuReone.Cdo.xml</DocumentationFile>
 
-    <Authors>Itua Juel-Gaben</Authors>
-    <PackageId>GetcuReone.Cdo</PackageId>
-    <Product>GetcuReone.Cdo</Product>
-    <Description>Common Domain Operations.</Description>
-    <RepositoryUrl>https://dev.azure.com/GetcuReone/GetcuReone.CommonProjects/_git/GetcuReone.Cdo</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>getcureone cdo</PackageTags>
-    <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://dev.azure.com/GetcuReone/GetcuReone.CommonProjects/</PackageProjectUrl>
-    <Copyright>Copyright © 2020 $(Authors)</Copyright>
-    <NeutralLanguage>en-US</NeutralLanguage>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <Authors>Itua Juel-Gaben</Authors>
+        <PackageId>GetcuReone.Cdo</PackageId>
+        <Product>GetcuReone.Cdo</Product>
+        <Description>Common Domain Operations.</Description>
+        <RepositoryUrl>https://github.com/GetcuReone/GetcuReone.Cdo</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>getcureone cdo</PackageTags>
+        <PackageReleaseNotes></PackageReleaseNotes>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdo</PackageProjectUrl>
+        <Copyright>Copyright © 2020 $(Authors)</Copyright>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
 
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-  </PropertyGroup>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\GetcuReone.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-    <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-    <FileVersion>$(majorVersion).0.0.0</FileVersion>
-  </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
+        <DelaySign>false</DelaySign>
+        <AssemblyVersion>$(majorVersion).$(minorVersion).0.0</AssemblyVersion>
+        <FileVersion>$(majorVersion).$(minorVersion).0.0</FileVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\LICENSE.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\README.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\LICENSE.txt">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="GetcuReone.Services" Version="[1.*,)" />
-    <PackageReference Include="GetcuReone.Cdi" Version="[1.*,)" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.0,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.0,)" />
+    </ItemGroup>
 
 </Project>

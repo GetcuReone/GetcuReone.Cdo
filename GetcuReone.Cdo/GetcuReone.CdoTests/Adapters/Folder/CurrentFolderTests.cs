@@ -1,5 +1,5 @@
-﻿using GetcuReone.Cdo.Adapters.Folder;
-using GetcuReone.Services.Folder;
+﻿using GetcuReone.Cdo.Folder;
+using GetcuReone.GetcuTestAdapter;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using TestCommon;
@@ -10,14 +10,16 @@ namespace GetcuReone.CdoTests.Adapters.Folder
     public sealed class CurrentFolderTests : FactoryTestBase
     {
         [TestMethod]
-        [TestCategory(TC.Projects.GR_Cdo)]
+        [TestCategory(GetcuReoneTC.Unit)]
         [Description("Call ExistsCurrentFolder method.")]
-        [Timeout(Timeouts.Milisecond.FiveHundred)]
+        [Timeout(Timeouts.Millisecond.FiveHundred)]
         public void CallExistsCurrentFolderTestCase()
         {
             GivenEmpty()
-                .When("Call ExistsCurrentFolder method.", () => GetAdapter<CurrentFolderAdapter>().ExistsCurrentFolder())
-                .Then("Check create proxy.", () => AssertCreateObjectResult<IFolder, string>(Environment.CurrentDirectory));
+                .When("Call ExistsCurrentFolder method.", () => 
+                    GetAdapter<CurrentFolderAdapter>().ExistsCurrentFolder())
+                .Then("Check create proxy.", () => 
+                    AssertCreateObjectResult<IFolder, string>(Environment.CurrentDirectory));
         }
     }
 }
