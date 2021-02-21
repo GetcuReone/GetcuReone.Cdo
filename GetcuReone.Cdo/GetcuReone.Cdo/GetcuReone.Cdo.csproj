@@ -8,7 +8,7 @@
         <Authors>Itua Juel-Gaben</Authors>
         <PackageId>GetcuReone.Cdo</PackageId>
         <Product>GetcuReone.Cdo</Product>
-        <Description>Common Domain Operations.</Description>
+        <Description>Common domain operations.</Description>
         <RepositoryUrl>https://github.com/GetcuReone/GetcuReone.Cdo</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdo</PackageTags>
