@@ -103,5 +103,14 @@ namespace GetcuReone.Cdo.Folder
         {
             return CreateProxy(_folderPath).GetFiles(searchPattern).Select(file => file.FullName).ToList();
         }
+
+        /// <summary>
+        /// Get path current folder.
+        /// </summary>
+        /// <returns></returns>
+        public virtual string GetPath()
+        {
+            return CreateProxy(_folderPath).GetPath();
+        }
     }
 }

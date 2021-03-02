@@ -57,5 +57,11 @@ namespace GetcuReone.Cdo.Folder
         /// <param name="searchPattern"></param>
         /// <returns></returns>
         FileInfo[] GetFiles(string searchPattern);
+
+        /// <summary>
+        /// Get path current folder.
+        /// </summary>
+        /// <returns></returns>
+        string GetPath();
     }
 }

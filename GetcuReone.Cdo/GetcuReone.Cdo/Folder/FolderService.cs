@@ -84,5 +84,11 @@ namespace GetcuReone.Cdo.Folder
         {
             return _rootFolder.GetFiles(searchPattern);
         }
+
+        /// <inheritdoc/>
+        public string GetPath()
+        {
+            return _rootFolder.FullName;
+        }
     }
 }
