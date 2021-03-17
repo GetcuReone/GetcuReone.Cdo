@@ -24,9 +24,9 @@ namespace GetcuReone.Cdo.Folder
         /// Download file in folder. 
         /// </summary>
         /// <param name="filePath"></param>
-        public virtual void DownloadFile(string filePath)
+        public virtual string DownloadFile(string filePath)
         {
-            CreateProxy(_folderPath).DownloadFile(filePath);
+            return CreateProxy(_folderPath).DownloadFile(filePath).FullName;
         }
 
         /// <summary>
