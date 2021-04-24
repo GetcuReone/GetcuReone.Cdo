@@ -12,7 +12,7 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdo</PackageTags>
         <PackageReleaseNotes>Chenges:
-        - fix assemble version
+        - changes from the configuration file are taken in code
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdo</PackageProjectUrl>
@@ -43,7 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.7,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="[2.0.0,)" />
     </ItemGroup>
 
 </Project>
