@@ -13,6 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InfrastructureTests", "Infr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetcuReone.CdoTests", "GetcuReone.CdoTests\GetcuReone.CdoTests.csproj", "{91E8F355-628B-4527-9272-608A0A06D7EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".buildTools", ".buildTools", "{BC9DCBEF-7A86-4823-A40B-BE579F128298}"
+	ProjectSection(SolutionItems) = preProject
+		.buildTools\GetcuReone.Common.props = .buildTools\GetcuReone.Common.props
+		.buildTools\GetcuReone.Lib.props = .buildTools\GetcuReone.Lib.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
