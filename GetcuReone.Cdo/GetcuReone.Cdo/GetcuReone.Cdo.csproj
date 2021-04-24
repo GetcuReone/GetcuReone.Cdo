@@ -1,11 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="..\.buildTools\GetcuReone.Lib.props" />
+
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>GetcuReone.Cdo</RootNamespace>
-        <DocumentationFile>GetcuReone.Cdo.xml</DocumentationFile>
-
-        <Authors>Itua Juel-Gaben</Authors>
+        
         <PackageId>GetcuReone.Cdo</PackageId>
         <Product>GetcuReone.Cdo</Product>
         <Description>Common domain operations.</Description>
@@ -30,14 +29,6 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-        <SignAssembly>true</SignAssembly>
-        <AssemblyOriginatorKeyFile>$(snkFilePath)</AssemblyOriginatorKeyFile>
-        <DelaySign>false</DelaySign>
-        <AssemblyVersion>$(majorVersion).0.0.0</AssemblyVersion>
-        <FileVersion>$(majorVersion).0.0.0</FileVersion>
-    </PropertyGroup>
-
     <ItemGroup>
         <None Include="..\..\LICENSE.txt">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -52,7 +43,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.6,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="[1.0.7,)" />
     </ItemGroup>
 
 </Project>
