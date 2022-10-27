@@ -11,8 +11,9 @@
         <RepositoryUrl>https://github.com/GetcuReone/GetcuReone.Cdo</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageTags>getcureone cdo</PackageTags>
-        <PackageReleaseNotes>Chenges:
-        - changes from the configuration file are taken in code
+        <PackageReleaseNotes>
+            Chenges:
+            - remove logging from libraries
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdo</PackageProjectUrl>
@@ -43,7 +44,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="[2.0.0,)" />
+        <PackageReference Include="GetcuReone.Cdi" Version="2.0.0" />
     </ItemGroup>
 
 </Project>

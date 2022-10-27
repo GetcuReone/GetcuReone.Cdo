@@ -11,25 +11,26 @@ namespace GetcuReone.Cdo.Folder
         /// Return file info.
         /// </summary>
         /// <param name="fileName">Relative file name.</param>
-        /// <returns></returns>
+        /// <returns>File info.</returns>
         FileInfo GetFileInfo(string fileName);
 
         /// <summary>
         /// Create current folder.
         /// </summary>
+        /// <returns>Folder info.</returns>
         DirectoryInfo CreateFolder();
 
         /// <summary>
         /// Is the current folder contained in the file system.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>True - folder exists.</returns>
         bool ExistsCurrentFolder();
 
         /// <summary>
         /// Move file.
         /// </summary>
-        /// <param name="newFilePath"></param>
-        /// <param name="oldName"></param>
+        /// <param name="newFilePath">New file path.</param>
+        /// <param name="oldName">Old file name.</param>
         void MoveTo(string newFilePath, string oldName);
 
         /// <summary>
@@ -42,26 +43,26 @@ namespace GetcuReone.Cdo.Folder
         /// Download file in folder.
         /// </summary>
         /// <param name="filePath">путь к файлу</param>
-        /// <returns></returns>
+        /// <returns>File info.</returns>
         FileInfo DownloadFile(string filePath);
 
         /// <summary>
         /// Get files.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Files.</returns>
         FileInfo[] GetFiles();
 
         /// <summary>
         /// Get files.
         /// </summary>
-        /// <param name="searchPattern"></param>
-        /// <returns></returns>
+        /// <param name="searchPattern">Search pattern.</param>
+        /// <returns>Files.</returns>
         FileInfo[] GetFiles(string searchPattern);
 
         /// <summary>
         /// Get path current folder.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Current folder path.</returns>
         string GetPath();
     }
 }

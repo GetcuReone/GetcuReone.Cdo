@@ -11,14 +11,14 @@ namespace GetcuReone.Cdo.File
         /// <summary>
         /// Read all text.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>File text.</returns>
         string ReadAllText();
 
         /// <summary>
         /// Read all text.
         /// </summary>
-        /// <param name="encoding"></param>
-        /// <returns></returns>
+        /// <param name="encoding">File encoding.</param>
+        /// <returns>File text.</returns>
         string ReadAllText(Encoding encoding);
 
         /// <summary>
@@ -30,27 +30,27 @@ namespace GetcuReone.Cdo.File
         /// <summary>
         /// Write all text.
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="encoding"></param>
+        /// <param name="text">File text.</param>
+        /// <param name="encoding">File encoding.</param>
         void WriteAllText(string text, Encoding encoding);
 
         /// <summary>
         /// Open read.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>File stream</returns>
         FileStream OpenRead();
 
         /// <summary>
         /// Open.
         /// </summary>
-        /// <param name="mode"></param>
-        /// <returns></returns>
+        /// <param name="mode">Opening mode.</param>
+        /// <returns>File stream.</returns>
         FileStream Open(FileMode mode);
 
         /// <summary>
         /// Open write.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>File stream in write mode.</returns>
         FileStream OpenWrite();
     }
 }
