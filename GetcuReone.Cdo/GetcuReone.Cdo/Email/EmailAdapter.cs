@@ -1,43 +1,27 @@
-﻿using GetcuReone.Cdi;
+﻿using GetcuReone.ComboPatterns.Adapter;
 
 namespace GetcuReone.Cdo.Email
 {
     /// <summary>
     /// Adapter for <see cref="IEmail"/>.
     /// </summary>
-    public sealed class EmailAdapter : GrAdapterProxyBase<IEmail>
+    public sealed class EmailAdapter : AdapterProxyBase<IEmail>
     {
-        /// <inheritdoc/>
-        protected override string AdapterName => nameof(EmailAdapter);
-
         /// <summary>
         /// Constructor.
         /// </summary>
-        public EmailAdapter() : base(() => new EmailService())
-        {
-        }
+        public EmailAdapter() : base(() => new EmailService()) { }
 
-        /// <summary>
-        /// Open email in default email program.
-        /// </summary>
-        /// <param name="email"></param>
+        /// <inheritdoc cref="IEmail.OpenEmail(Cdm.Communication.Email)"/>
         public void OpenEmail(Cdm.Communication.Email email)
         {
-            CallMethodLogging(email);
             CreateProxy().OpenEmail(email);
-            ReturnLogging();
         }
 
-        /// <summary>
-        /// Open email in default email program.
-        /// </summary>
-        /// <param name="email"></param>
-        /// <param name="fileEmail"></param>
+        /// <inheritdoc cref="IEmail.OpenEmail(Cdm.Communication.Email, string)"/>
         public void OpenEmail(Cdm.Communication.Email email, string fileEmail)
         {
-            CallMethodLogging(email);
             CreateProxy().OpenEmail(email, fileEmail);
-            ReturnLogging();
         }
     }
 }

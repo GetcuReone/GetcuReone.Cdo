@@ -1,6 +1,4 @@
-﻿using GetcuReone.Cdi;
-using GetcuReone.Cdo.File;
-using System.IO;
+﻿using System.IO;
 
 namespace GetcuReone.Cdo.Folder
 {

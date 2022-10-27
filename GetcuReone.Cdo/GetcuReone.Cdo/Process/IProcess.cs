@@ -8,9 +8,9 @@
         /// <summary>
         /// Start process.
         /// </summary>
-        /// <param name="processName"></param>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// <param name="processName">Process name.</param>
+        /// <param name="args">Process arguments.</param>
+        /// <returns>Process.</returns>
         System.Diagnostics.Process Start(string processName, string args);
     }
 }
