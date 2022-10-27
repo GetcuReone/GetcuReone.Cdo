@@ -12,7 +12,7 @@ namespace GetcuReone.Cdo.File
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <param name="filePath"></param>
+        /// <param name="filePath">File path.</param>
         public FileService(string filePath)
         {
             _filePath = filePath;

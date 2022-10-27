@@ -12,10 +12,10 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Serialize <paramref name="serializeObj"/> in <paramref name="stream"/>.
         /// </summary>
-        /// <typeparam name="TSerializeObj"></typeparam>
-        /// <typeparam name="TStream"></typeparam>
-        /// <param name="serializeObj"></param>
-        /// <param name="stream"></param>
+        /// <typeparam name="TSerializeObj">The type of the object being serialized.</typeparam>
+        /// <typeparam name="TStream">Stream type.</typeparam>
+        /// <param name="serializeObj">Serializable object.</param>
+        /// <param name="stream">Stream.</param>
         public static void SerializeToStream<TSerializeObj, TStream>(this TSerializeObj serializeObj, TStream stream)
             where TStream : Stream
         {
@@ -26,9 +26,9 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Serialize <paramref name="serializeObj"/> in <paramref name="writer"/>.
         /// </summary>
-        /// <typeparam name="TSerializeObj"></typeparam>
-        /// <param name="serializeObj"></param>
-        /// <param name="writer"></param>
+        /// <typeparam name="TSerializeObj">The type of the object being serialized.</typeparam>
+        /// <param name="serializeObj">Serializable object.</param>
+        /// <param name="writer">Write stream.</param>
         public static void SerializeToTextWriter<TSerializeObj>(this TSerializeObj serializeObj, TextWriter writer)
         {
             var formatter = new XmlSerializer(typeof(TSerializeObj));
@@ -38,9 +38,9 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Serialize <paramref name="serializeObj"/> in <see cref="string"/>.
         /// </summary>
-        /// <typeparam name="TSerializeObj"></typeparam>
-        /// <param name="serializeObj"></param>
-        /// <returns></returns>
+        /// <typeparam name="TSerializeObj">The type of the object being serialized.</typeparam>
+        /// <param name="serializeObj">Serializable object.</param>
+        /// <returns>Xml text.</returns>
         public static string Serialize<TSerializeObj>(this TSerializeObj serializeObj)
         {
             return Serialize(serializeObj, Encoding.UTF8);
@@ -49,10 +49,10 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Serialize <paramref name="serializeObj"/> in <see cref="string"/>.
         /// </summary>
-        /// <typeparam name="TSerializeObj"></typeparam>
-        /// <param name="serializeObj"></param>
-        /// <param name="encoding"></param>
-        /// <returns></returns>
+        /// <typeparam name="TSerializeObj">The type of the object being serialized.</typeparam>
+        /// <param name="serializeObj">Serializable object.</param>
+        /// <param name="encoding">Encoding.</param>
+        /// <returns>Xml text.</returns>
         public static string Serialize<TSerializeObj>(TSerializeObj serializeObj, Encoding encoding)
         {
             using (var memoryStream = new MemoryStream())
@@ -71,9 +71,9 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Deserialize obj <typeparamref name="TDeserializeObj"/> type from <paramref name="stream"/>.
         /// </summary>
-        /// <typeparam name="TDeserializeObj"></typeparam>
-        /// <param name="stream"></param>
-        /// <returns></returns>
+        /// <typeparam name="TDeserializeObj">The type of the object being deserialized.</typeparam>
+        /// <param name="stream">Stream.</param>
+        /// <returns>Deserializable object.</returns>
         public static TDeserializeObj DeserializeFromXml<TDeserializeObj>(this Stream stream)
         {
             var formatter = new XmlSerializer(typeof(TDeserializeObj));
@@ -83,10 +83,10 @@ namespace GetcuReone.Cdo.Helpers
         /// <summary>
         /// Desirialize from string.
         /// </summary>
-        /// <typeparam name="TDeserializeObj"></typeparam>
-        /// <param name="xml"></param>
-        /// <param name="encoding"></param>
-        /// <returns></returns>
+        /// <typeparam name="TDeserializeObj">The type of the object being deserialized.</typeparam>
+        /// <param name="xml">Xml string.</param>
+        /// <param name="encoding">Encoding.</param>
+        /// <returns>Deserializable object.</returns>
         public static TDeserializeObj DeserializeFromXml<TDeserializeObj>(string xml, Encoding encoding)
         {
             using (var memoryStream = new MemoryStream())

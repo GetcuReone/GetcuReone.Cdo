@@ -8,15 +8,8 @@ namespace GetcuReone.Cdo.Folder
     public sealed class CurrentFolderAdapter : FolderAdapterBase
     {
         /// <summary>
-        /// Adapter name.
-        /// </summary>
-        protected override string AdapterName => nameof(CurrentFolderAdapter);
-
-        /// <summary>
         /// Constructor.
         /// </summary>
-        public CurrentFolderAdapter() : base(Environment.CurrentDirectory)
-        {
-        }
+        public CurrentFolderAdapter() : base(Environment.CurrentDirectory) { }
     }
 }

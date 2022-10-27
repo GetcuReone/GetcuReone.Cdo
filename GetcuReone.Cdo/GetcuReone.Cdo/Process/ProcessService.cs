@@ -1,8 +1,6 @@
 ﻿namespace GetcuReone.Cdo.Process
 {
-    /// <summary>
-    /// Service for process.
-    /// </summary>
+    /// <inheritdoc cref="IProcess"/>
     public class ProcessService : IProcess
     {
         /// <inheritdoc/>
