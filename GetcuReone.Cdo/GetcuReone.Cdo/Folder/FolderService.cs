@@ -21,6 +21,7 @@ namespace GetcuReone.Cdo.Folder
         {
             _rootFolder.Create();
             _rootFolder.Refresh();
+
             return _rootFolder;
         }
 
@@ -49,6 +50,7 @@ namespace GetcuReone.Cdo.Folder
             }
 
             fileTo.Refresh();
+
             return fileTo;
         }
 
@@ -56,6 +58,7 @@ namespace GetcuReone.Cdo.Folder
         public bool ExistsCurrentFolder()
         {
             _rootFolder.Refresh();
+
             return _rootFolder.Exists;
         }
 

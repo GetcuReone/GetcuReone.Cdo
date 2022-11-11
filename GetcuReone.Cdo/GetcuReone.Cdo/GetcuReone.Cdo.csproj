@@ -14,6 +14,7 @@
         <PackageReleaseNotes>
             Chenges:
             - remove logging from libraries
+            - support for changes in the GetcuReone.FactFactory.5.0.0 library
         </PackageReleaseNotes>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/GetcuReone/GetcuReone.Cdo</PackageProjectUrl>
@@ -44,7 +45,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="GetcuReone.Cdi" Version="2.0.0" />
+        <PackageReference Include="GetcuReone.Cdi" Version="3.0.0" />
     </ItemGroup>
 
 </Project>

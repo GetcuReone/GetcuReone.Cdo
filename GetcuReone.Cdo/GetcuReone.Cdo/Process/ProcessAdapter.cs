@@ -5,7 +5,7 @@ namespace GetcuReone.Cdo.Process
     /// <summary>
     /// Adapter for <see cref="IProcess"/>.
     /// </summary>
-    public sealed class ProcessAdapter : AdapterProxyBase<IProcess>
+    public class ProcessAdapter : AdapterProxyBase<IProcess>
     {
         /// <summary>
         /// Constructor.
