@@ -6,7 +6,7 @@ namespace GetcuReone.Cdo.Folder
     /// <summary>
     /// Adapter for folder '{current_directory}/AppData'
     /// </summary>
-    public sealed class AppDataFolderAdapter : FolderAdapterBase
+    public class AppDataFolderAdapter : BaseFolderAdapter
     {
         /// <summary>
         /// Constructor.

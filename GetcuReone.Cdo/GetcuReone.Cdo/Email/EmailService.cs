@@ -1,4 +1,5 @@
 ﻿using GetcuReone.Cdi;
+using GetcuReone.Cdi.Extensions;
 using GetcuReone.Cdo.File;
 using GetcuReone.Cdo.Folder;
 using GetcuReone.Cdo.Process;
@@ -13,7 +14,7 @@ namespace GetcuReone.Cdo.Email
     /// <summary>
     /// Service for email.
     /// </summary>
-    public class EmailService : GrFactoryBase, IEmail
+    public class EmailService : BaseGrFactory, IEmail
     {
         /// <inheritdoc/>
         protected override string FactoryName => nameof(EmailService);
@@ -21,21 +22,23 @@ namespace GetcuReone.Cdo.Email
         /// <inheritdoc/>
         public void OpenEmail(Cdm.Communication.Email email)
         {
-            OpenEmail(
-                email,
-                GetAdapter<CurrentFolderAdapter>().GetFullName("temp.eml"));
+            string emailfile = GetAdapter<CurrentFolderAdapter>().GetFullName("temp.eml");
+
+            OpenEmail(email, emailfile);
         }
 
         /// <inheritdoc/>
         public void OpenEmail(Cdm.Communication.Email email, string fileEmail)
         {
-            var mailMessage = new MailMessage();
+            var mailMessage = new MailMessage
+            {
+                Subject = email.Subject,
+                Body = email.Body,
+                From = new MailAddress(email.From),
+            };
 
             foreach (var recipient in email.To)
                 mailMessage.To.Add(new MailAddress(recipient));
-            mailMessage.From = new MailAddress(email.From);
-            mailMessage.Subject = email.Subject;
-            mailMessage.Body = email.Body;
 
             if (!email.Attachments.IsNullOrEmpty())
                 foreach (var att in email.Attachments)
