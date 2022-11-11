@@ -5,6 +5,18 @@
 
 - [AppDataFolderAdapter](#T-GetcuReone-Cdo-Folder-AppDataFolderAdapter 'GetcuReone.Cdo.Folder.AppDataFolderAdapter')
   - [#ctor()](#M-GetcuReone-Cdo-Folder-AppDataFolderAdapter-#ctor 'GetcuReone.Cdo.Folder.AppDataFolderAdapter.#ctor')
+- [BaseFolderAdapter](#T-GetcuReone-Cdo-Folder-BaseFolderAdapter 'GetcuReone.Cdo.Folder.BaseFolderAdapter')
+  - [#ctor()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-#ctor-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.#ctor(System.String)')
+  - [ContainFile(fileName)](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-ContainFile-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.ContainFile(System.String)')
+  - [CreateCurrentFolder()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-CreateCurrentFolder 'GetcuReone.Cdo.Folder.BaseFolderAdapter.CreateCurrentFolder')
+  - [DeleteFile()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-DeleteFile-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.DeleteFile(System.String)')
+  - [DownloadFile()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-DownloadFile-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.DownloadFile(System.String)')
+  - [ExistsCurrentFolder()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-ExistsCurrentFolder 'GetcuReone.Cdo.Folder.BaseFolderAdapter.ExistsCurrentFolder')
+  - [GetFiles()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFiles 'GetcuReone.Cdo.Folder.BaseFolderAdapter.GetFiles')
+  - [GetFiles()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFiles-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.GetFiles(System.String)')
+  - [GetFullName(fileName)](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFullName-System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.GetFullName(System.String)')
+  - [GetPath()](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetPath 'GetcuReone.Cdo.Folder.BaseFolderAdapter.GetPath')
+  - [RenameFile(newName,oldName)](#M-GetcuReone-Cdo-Folder-BaseFolderAdapter-RenameFile-System-String,System-String- 'GetcuReone.Cdo.Folder.BaseFolderAdapter.RenameFile(System.String,System.String)')
 - [CurrentFolderAdapter](#T-GetcuReone-Cdo-Folder-CurrentFolderAdapter 'GetcuReone.Cdo.Folder.CurrentFolderAdapter')
   - [#ctor()](#M-GetcuReone-Cdo-Folder-CurrentFolderAdapter-#ctor 'GetcuReone.Cdo.Folder.CurrentFolderAdapter.#ctor')
 - [EmailAdapter](#T-GetcuReone-Cdo-Email-EmailAdapter 'GetcuReone.Cdo.Email.EmailAdapter')
@@ -35,16 +47,6 @@
   - [WriteAllText()](#M-GetcuReone-Cdo-File-FileService-WriteAllText-System-String,System-Text-Encoding- 'GetcuReone.Cdo.File.FileService.WriteAllText(System.String,System.Text.Encoding)')
 - [FolderAdapterBase](#T-GetcuReone-Cdo-Folder-FolderAdapterBase 'GetcuReone.Cdo.Folder.FolderAdapterBase')
   - [#ctor()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-#ctor-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.#ctor(System.String)')
-  - [ContainFile(fileName)](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-ContainFile-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.ContainFile(System.String)')
-  - [CreateCurrentFolder()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-CreateCurrentFolder 'GetcuReone.Cdo.Folder.FolderAdapterBase.CreateCurrentFolder')
-  - [DeleteFile()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-DeleteFile-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.DeleteFile(System.String)')
-  - [DownloadFile()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-DownloadFile-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.DownloadFile(System.String)')
-  - [ExistsCurrentFolder()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-ExistsCurrentFolder 'GetcuReone.Cdo.Folder.FolderAdapterBase.ExistsCurrentFolder')
-  - [GetFiles()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFiles 'GetcuReone.Cdo.Folder.FolderAdapterBase.GetFiles')
-  - [GetFiles()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFiles-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.GetFiles(System.String)')
-  - [GetFullName(fileName)](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFullName-System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.GetFullName(System.String)')
-  - [GetPath()](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetPath 'GetcuReone.Cdo.Folder.FolderAdapterBase.GetPath')
-  - [RenameFile(newName,oldName)](#M-GetcuReone-Cdo-Folder-FolderAdapterBase-RenameFile-System-String,System-String- 'GetcuReone.Cdo.Folder.FolderAdapterBase.RenameFile(System.String,System.String)')
 - [FolderService](#T-GetcuReone-Cdo-Folder-FolderService 'GetcuReone.Cdo.Folder.FolderService')
   - [#ctor(folderPath)](#M-GetcuReone-Cdo-Folder-FolderService-#ctor-System-String- 'GetcuReone.Cdo.Folder.FolderService.#ctor(System.String)')
   - [CreateFolder()](#M-GetcuReone-Cdo-Folder-FolderService-CreateFolder 'GetcuReone.Cdo.Folder.FolderService.CreateFolder')
@@ -113,6 +115,157 @@ Constructor.
 ##### Parameters
 
 This constructor has no parameters.
+
+<a name='T-GetcuReone-Cdo-Folder-BaseFolderAdapter'></a>
+## BaseFolderAdapter `type`
+
+##### Namespace
+
+GetcuReone.Cdo.Folder
+
+##### Summary
+
+Base clas for folder adapter
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-#ctor-System-String-'></a>
+### #ctor() `constructor`
+
+##### Summary
+
+Constructor.
+
+##### Parameters
+
+This constructor has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-ContainFile-System-String-'></a>
+### ContainFile(fileName) `method`
+
+##### Summary
+
+Contain file.
+
+##### Returns
+
+True - file contain
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| fileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | имя файла |
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-CreateCurrentFolder'></a>
+### CreateCurrentFolder() `method`
+
+##### Summary
+
+Create current folder.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-DeleteFile-System-String-'></a>
+### DeleteFile() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-DownloadFile-System-String-'></a>
+### DownloadFile() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-ExistsCurrentFolder'></a>
+### ExistsCurrentFolder() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFiles'></a>
+### GetFiles() `method`
+
+##### Summary
+
+Get files.
+
+##### Returns
+
+File paths.
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFiles-System-String-'></a>
+### GetFiles() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetFullName-System-String-'></a>
+### GetFullName(fileName) `method`
+
+##### Summary
+
+Get file path.
+
+##### Returns
+
+File path.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| fileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | File name. |
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-GetPath'></a>
+### GetPath() `method`
+
+##### Summary
+
+*Inherit from parent.*
+
+##### Parameters
+
+This method has no parameters.
+
+<a name='M-GetcuReone-Cdo-Folder-BaseFolderAdapter-RenameFile-System-String,System-String-'></a>
+### RenameFile(newName,oldName) `method`
+
+##### Summary
+
+Rename file.
+
+##### Parameters
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| newName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | New name file. |
+| oldName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Old name file. |
 
 <a name='T-GetcuReone-Cdo-Folder-CurrentFolderAdapter'></a>
 ## CurrentFolderAdapter `type`
@@ -448,147 +601,18 @@ GetcuReone.Cdo.Folder
 
 ##### Summary
 
-Base clas for folder adapter
+*Inherit from parent.*
 
 <a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-#ctor-System-String-'></a>
 ### #ctor() `constructor`
 
 ##### Summary
 
-Constructor.
+*Inherit from parent.*
 
 ##### Parameters
 
 This constructor has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-ContainFile-System-String-'></a>
-### ContainFile(fileName) `method`
-
-##### Summary
-
-Contain file.
-
-##### Returns
-
-True - file contain
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| fileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | имя файла |
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-CreateCurrentFolder'></a>
-### CreateCurrentFolder() `method`
-
-##### Summary
-
-Create current folder.
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-DeleteFile-System-String-'></a>
-### DeleteFile() `method`
-
-##### Summary
-
-*Inherit from parent.*
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-DownloadFile-System-String-'></a>
-### DownloadFile() `method`
-
-##### Summary
-
-*Inherit from parent.*
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-ExistsCurrentFolder'></a>
-### ExistsCurrentFolder() `method`
-
-##### Summary
-
-*Inherit from parent.*
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFiles'></a>
-### GetFiles() `method`
-
-##### Summary
-
-Get files.
-
-##### Returns
-
-File paths.
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFiles-System-String-'></a>
-### GetFiles() `method`
-
-##### Summary
-
-*Inherit from parent.*
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetFullName-System-String-'></a>
-### GetFullName(fileName) `method`
-
-##### Summary
-
-Get file path.
-
-##### Returns
-
-File path.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| fileName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | File name. |
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-GetPath'></a>
-### GetPath() `method`
-
-##### Summary
-
-*Inherit from parent.*
-
-##### Parameters
-
-This method has no parameters.
-
-<a name='M-GetcuReone-Cdo-Folder-FolderAdapterBase-RenameFile-System-String,System-String-'></a>
-### RenameFile(newName,oldName) `method`
-
-##### Summary
-
-Rename file.
-
-##### Parameters
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| newName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | New name file. |
-| oldName | [System.String](http://msdn.microsoft.com/query/dev14.query?appId=Dev14IDEF1&l=EN-US&k=k:System.String 'System.String') | Old name file. |
 
 <a name='T-GetcuReone-Cdo-Folder-FolderService'></a>
 ## FolderService `type`

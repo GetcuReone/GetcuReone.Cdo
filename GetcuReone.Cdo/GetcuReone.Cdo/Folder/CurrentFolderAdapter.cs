@@ -5,7 +5,7 @@ namespace GetcuReone.Cdo.Folder
     /// <summary>
     /// Adapter for <see cref="IFolder"/>. Current folder.
     /// </summary>
-    public sealed class CurrentFolderAdapter : FolderAdapterBase
+    public class CurrentFolderAdapter : BaseFolderAdapter
     {
         /// <summary>
         /// Constructor.
